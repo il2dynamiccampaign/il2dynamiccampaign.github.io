@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutorial | IL-2 Dynamic Campaign</title>
+<meta name="description" content="A dynamic campaign for IL-2 Great Battles">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="IL-2 Dynamic Campaign, home">
+    <img src="logo.png" alt="" width="46" height="46">
+    <span><span class="eyebrow">IL-2 GREAT BATTLES</span><span class="brand-title">Dynamic Campaign</span></span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="tutorial.html" aria-current="page">Tutorial</a>
+    <a href="download.html">Download</a>
+    <a href="roadmap.html">Roadmap</a>
+  </nav>
+</header>
+<main class="page">
+<section>
+  <h1>Tutorial</h1>
+  <p class="lead">How to install I2DC, set up IL-2, and play your first mission.</p>
+</section>
+
+<div class="doc">
+  <aside class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ul>
+      <li><a href="#setup">Getting started</a></li>
+      <li class="sub"><a href="#download">1. Download and extract</a></li>
+      <li class="sub"><a href="#logging">2. Turn on mission reports</a></li>
+      <li class="sub"><a href="#folder">3. Choose the IL-2 folder</a></li>
+      <li class="sub"><a href="#restart">4. Restart IL-2</a></li>
+      <li><a href="#loop">The campaign loop</a></li>
+      <li><a href="#screens">Main screens</a></li>
+      <li class="sub"><a href="#plan">Plan or edit a flight</a></li>
+      <li class="sub"><a href="#chart">Navigation map</a></li>
+      <li class="sub"><a href="#hq">HQ</a></li>
+      <li class="sub"><a href="#orders">AI orders</a></li>
+      <li class="sub"><a href="#report">Mission report</a></li>
+      <li><a href="#help">Common issues</a></li>
+    </ul>
+  </aside>
+
+  <div>
+    <section id="setup">
+      <h2>Getting started</h2>
+      <h3 id="download">1. Download and extract</h3>
+      <p>Download the ZIP from the <a href="download.html">Download</a> page, extract the whole folder anywhere, and double click <code>IL-2 Dynamic Campaign.exe</code>. Nothing needs to be installed, and the folder does not need to be inside IL-2.</p>
+      <p class="placeholder">Placeholder. Add a screenshot of the extracted folder and the Windows warning.</p>
+
+      <h3 id="logging">2. Turn on mission reports</h3>
+      <p>Mission reports need IL-2 mission text logs. In <code>IL-2\data\startup.cfg</code>, under <code>[KEY = game]</code>, set:</p>
+      <pre><code>mission_text_log = 1</code></pre>
+      <p>Restart IL-2 after making the change.</p>
+
+      <h3 id="folder">3. Choose the IL-2 folder</h3>
+      <p>In the app, open Configuration and choose your IL-2 data folder, for example:</p>
+      <pre><code>C:\Program Files (x86)\Steam\steamapps\common\IL-2 Sturmovik Battle of Stalingrad\data</code></pre>
+
+      <h3 id="restart">4. Restart IL-2 after your first mission</h3>
+      <p>After your first mission is compiled, restart IL-2 once. IL-2 only finds a new mission folder when the game starts. The mission is then available under Missions, in the DynamicCampaign folder.</p>
+    </section>
+
+    <section id="loop">
+      <h2>The campaign loop</h2>
+      <ol class="steps">
+        <li>Start a campaign.</li>
+        <li>Optional: check on your HQ, inspect the map, and look at the AI flight orders.</li>
+        <li>Plan your mission under "Plan / edit player flight".</li>
+        <li>Resolve turn.</li>
+        <li>If your mission happens, a mid-turn pause triggers. Compile the mission.</li>
+        <li>Fly the mission in IL-2. Optionally, open the navigation map full screen on a second monitor.</li>
+        <li>Read and accept the mission report.</li>
+      </ol>
+    </section>
+
+    <section id="screens">
+      <h2>Main screens</h2>
+      <h3 id="plan">Plan or edit a flight</h3>
+      <p>You manage your unit and plan your flights within the war. Flight plans respond to the intelligence available to you, so a deep strike needs planning that avoids known defensive positions and enemy activity.</p>
+      <figure style="margin-top:18px">
+        <img src="images/fig-flight-planning.webp" alt="The flight planning screen">
+        <figcaption>Placeholder caption. The flight planning screen.</figcaption>
+      </figure>
+
+      <h3 id="chart">Navigation map</h3>
+      <p class="placeholder">Placeholder. Explain the generated navigation chart, how it is installed with the mission, and the full screen view.</p>
+
+      <h3 id="hq">HQ</h3>
+      <p class="placeholder">Placeholder. Explain pilots and fatigue, aircraft replacements, and shared airfield requests.</p>
+
+      <h3 id="orders">AI orders</h3>
+      <p>AI commanders issue ground and air orders based on the reconnaissance and intelligence available to them. Operational orders describe what the AI is trying to achieve in a given period.</p>
+      <p class="placeholder">Placeholder. Explain how to read the AI flight orders and what the player can and cannot control.</p>
+
+      <h3 id="report">Mission report</h3>
+      <p>After flying, finish the sortie in IL-2 and exit it, then read the mission report in the app, review it, and accept it. The turn then continues.</p>
+    </section>
+
+    <section id="help">
+      <h2>Common issues</h2>
+      <ul>
+        <li>If "Windows protected your PC" shows up, choose "More info", then "Run anyway".</li>
+        <li>I2DC renders many objects and can push the IL-2 engine hard. If the game runs too slowly, lower the "Mission detail" setting under Configuration, or adjust the settings individually.</li>
+        <li>If mission compilation worked but you do not see the mission in IL-2, restart IL-2 first. IL-2 only scans for new folders when it starts.</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <p>IL-2 Dynamic Campaign is an unofficial community project. It is not affiliated with or endorsed by 1C Game Studios.</p>
+</footer>
+</body>
+</html>
