@@ -23,29 +23,22 @@
 </header>
 <main class="page">
 <section class="hero">
-  <span class="eyebrow">Closed alpha</span>
-  <h1>A dynamic campaign for IL-2 Great Battles</h1>
-  <p class="lead">IL-2 Dynamic Campaign (I2DC) is a third-party dynamic campaign application for IL-2 Great Battles. It independently and explicitly simulates an ongoing war, both in the air and on the ground. It generates flyable missions from that war and carries your actions back into the campaign.</p>
+  <h1>IL-2 Dynamic Campaign</h1>
+  <p class="lead">IL-2 Dynamic Campaign (I2DC) is a third-party dynamic campaign application for IL-2 Great Battles. It independently and explicitly simulates an ongoing war, both in the air and on the ground. It generates flyable missions from that war and carries your actions back into the campaign. The beta includes a full-map Operation Uranus campaign for either side.</p>
   <div class="actions">
     <a class="button primary large" href="download.html">Download</a>
     <a class="button large" href="tutorial.html">Read the tutorial</a>
   </div>
-  <figure class="hero-figure">
-    <img src="images/fig-ground-support.webp" alt="A ground support mission shown on the campaign map, the navigation chart and in IL-2">
-    <figcaption>Placeholder caption. A strategic attack on the campaign map becomes a navigation chart and then a physical battlefield in IL-2.</figcaption>
-  </figure>
 </section>
 
 <section>
   <h2>War game simulation</h2>
   <div class="split">
     <div>
-      <p>I2DC explicitly simulates the entire conflict like a war game. Ground formations fight, aircraft carry out operations, supplies move between depots, airfields and the front, and AI commanders issue orders based on available reconnaissance and intelligence information.</p>
-      <p>The front develops through these operations and their outcomes, while losses and disrupted supply shape what can happen next.</p>
+      <p>I2DC explicitly simulates the entire conflict like a war game. It is built around a hex-based operational map linked to IL-2 coordinates, with ground formations represented at approximately brigade to regimental scale, and air units organized at the regiment / staffel level. Ground formations fight, aircraft carry out operations, supplies move between depots, airfields and the front, and AI commanders issue orders based on available reconnaissance and intelligence information. The front develops through these operations and their outcomes, while losses and disrupted supply shape what can happen next.</p>
     </div>
     <figure>
-      <img src="images/fig-hex-map.png" alt="A source map turned into a hex map, and the turn flow of the campaign">
-      <figcaption>Placeholder caption. From the source map to the hex map, and the loop of a campaign turn.</figcaption>
+      <img src="images/fig-war-game.webp" alt="A source map turned into a hex map, a formation inspector, and the turn flow of the campaign">
     </figure>
   </div>
 </section>
@@ -54,45 +47,32 @@
   <h2>What you will do as a player</h2>
   <div class="split">
     <figure>
-      <img src="images/fig-flight-planning.webp" alt="The campaign map at turn 1 and turn 16, and the flight planning screen">
-      <figcaption>Placeholder caption. The war moves between turns, and you plan your flights within it.</figcaption>
+      <img src="images/fig-player.webp" alt="The campaign map at turn 1 and turn 16, and the flight planning screen">
     </figure>
     <div>
-      <p>You manage your unit and plan your flights within the war. When the campaign reaches your sortie, it pauses and generates an IL-2 mission. After flying, you import the results, and the outcome of your sortie shapes how the war continues.</p>
-      <p>For example, an airfield attack can destroy parked aircraft and supplies that would otherwise support later operations.</p>
+      <p>You manage your unit and plan your flights within the war. When the campaign reaches your sortie, it pauses and generates an IL-2 mission. As you fly the mission, you will see other AI flights carrying out their missions, ground units maneuvering and fighting, and supply trucks trying to get to their destination, matching the strategic situation. After flying, you import the results, and the outcome of your sortie shapes how the war continues. Suppression, reconnaissance, fuel and ammunition storage are all simulated to allow players to influence the battle in a variety of ways.</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>From the campaign</h2>
-  <div class="gallery">
+  <h2>Intelligence, Reconnaissance, and Flight Planning</h2>
+  <div class="split">
+    <div>
+      <p>Fog of war constrains what you, and the AI commander, know about the battlefield. All enemy information results from reconnaissance reports submitted by player flights, AI flights, and ground observers. This information is aggregated into an intelligence report, available for the AI commander and player, to direct future reconnaissance effort, fighter patrol priority, and ground attack routing. A deep strike will require intelligent planning to avoid known defensive positions or enemy activity hotspots to increase the chance of completing your objective. The enemy also responds to player activities. If players keep operating ground strike or interception in the same area, the enemy's perceived local threat level will increase, and they might respond by avoiding this area, requesting additional escort, or directing additional interception or fighter sweep in the area.</p>
+    </div>
     <figure>
-      <img src="images/fig-intelligence.webp" alt="Intelligence heat maps from the Soviet and German perspectives">
-      <figcaption>Placeholder caption. Intelligence maps built from reconnaissance.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/fig-intercept.webp" alt="An intercept offer, the resulting losses and the engagement in IL-2">
-      <figcaption>Placeholder caption. An intercept offer and its consequences.</figcaption>
-    </figure>
-    <figure>
-      <img src="images/fig-navigation-chart.jpg" alt="A navigation chart for a bridge attack">
-      <figcaption>Placeholder caption. A generated navigation chart.</figcaption>
+      <img src="images/fig-intelligence.webp" alt="Intelligence heat maps of enemy fighter, ground attack and anti aircraft activity from the Soviet and German perspectives">
+      <img src="images/fig-recon-report.webp" alt="The recon report screen: marking ground activity in A and reporting parked aircraft in B">
+      <img src="images/fig-navigation-chart.jpg" alt="A navigation chart with waypoints and a flight plan table for a bridge attack">
     </figure>
   </div>
 </section>
-
-<section>
-  <h2>Alpha release</h2>
-  <div class="callout">
-    <p>The alpha features Operation Uranus on the Battle of Stalingrad map, playable from either side.</p>
-    <p class="muted">Placeholder text. Release information and a link to the download page will go here.</p>
-  </div>
-</section>
-
 </main>
 <footer class="site-footer">
   <p>IL-2 Dynamic Campaign is an unofficial community project. It is not affiliated with or endorsed by 1C Game Studios.</p>
 </footer>
+<script src="slides.js"></script>
+<script src="lightbox.js"></script>
 </body>
 </html>
