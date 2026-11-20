@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configuration Guide | IL-2 Dynamic Campaign</title>
+<meta name="description" content="A dynamic campaign for IL-2 Great Battles">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="IL-2 Dynamic Campaign, home">
+    <img src="logo.png" alt="" width="46" height="46">
+    <span><span class="eyebrow">IL-2 GREAT BATTLES</span><span class="brand-title">Dynamic Campaign</span></span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="tutorial.html">Tutorial</a>
+    <a href="configuration.html" aria-current="page">Configuration Guide</a>
+    <a href="gameplay.html">Gameplay Mechanisms</a>
+    <a href="download.html">Download</a>
+    <a href="roadmap.html">Roadmap</a>
+  </nav>
+</header>
+<main class="page">
+<section>
+  <h1>Configuration Guide</h1>
+</section>
+
+<div class="doc">
+  <aside class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ul>
+      <li><a href="#il2-performance">IL-2 Performance</a></li>
+      <li><a href="#ground-spawn">Ground object spawn settings</a></li>
+      <li class="sub"><a href="#equipment-at-target">1. Equipment at target (%)</a></li>
+      <li class="sub"><a href="#aaa">2. AAA (%)</a></li>
+      <li class="sub"><a href="#infantry-at-target">3. Infantry at target (%)</a></li>
+      <li class="sub"><a href="#road-convoys">4. Road supply convoys (%)</a></li>
+      <li class="sub"><a href="#rail-movements">5. Rail supply movements (%)</a></li>
+      <li class="sub"><a href="#en-route-multiplier">6. En-route multiplier</a></li>
+      <li class="sub"><a href="#far-away-multiplier">7. Far-away multiplier</a></li>
+      <li class="sub"><a href="#en-route-distance">8. En-route distance (km)</a></li>
+      <li class="sub"><a href="#mission-coverage">9. Mission coverage (km)</a></li>
+      <li class="sub"><a href="#activation-margin">10. Activation margin (km)</a></li>
+      <li class="sub"><a href="#deactivation-margin">11. Deactivation margin (km)</a></li>
+      <li class="sub"><a href="#air-combat-multiplier">12. Air combat ground asset multiplier</a></li>
+      <li class="sub"><a href="#max-ground-objects">13. Maximum ground objects</a></li>
+      <li class="sub"><a href="#local-ground-cap">14. Local ground object cap</a></li>
+      <li class="sub"><a href="#cap-order">Order and priority</a></li>
+      <li><a href="#aircraft-spawn">Aircraft spawn settings</a></li>
+      <li class="sub"><a href="#vwp">1. Virtual waypoint (VWP)</a></li>
+      <li class="sub"><a href="#vwp-spacing">2. Virtual waypoint spacing (km)</a></li>
+      <li class="sub"><a href="#intercept-vwp-spacing">3. Intercept Virtual Waypoint spacing (km)</a></li>
+      <li class="sub"><a href="#vwp-pruning">4. Virtual Waypoint Pruning Distance (km)</a></li>
+      <li class="sub"><a href="#vwp-slack">5. Virtual Waypoint Time Slack (min)</a></li>
+      <li class="sub"><a href="#aircraft-activation">6. Aircraft activation distance (km)</a></li>
+      <li class="sub"><a href="#aircraft-deactivation">7. Aircraft deactivation distance (km)</a></li>
+      <li><a href="#decrowding">Aircraft De-crowding settings</a></li>
+      <li class="sub"><a href="#decrowding-formula">1. Formula</a></li>
+      <li class="sub"><a href="#crowding-coefficient">2. Crowding Coefficient</a></li>
+      <li class="sub"><a href="#minimum-aircraft">3. Minimum Aircraft Number Before De-crowding</a></li>
+    </ul>
+  </aside>
+
+  <div>
+    <section id="il2-performance">
+      <h2>IL-2 Performance</h2>
+      <p>The IL-2 engine has a limited capability to simulate a large number of items. This is largely gated by single-core CPU performance. When mission complexity increases and the CPU cannot keep up, the IL-2 engine continues the simulation at a slower speed, causing the game to "slow down".</p>
+      <p>In our testing, we noticed that all objects contribute to this slowdown. From most severe to least severe:</p>
+      <ul>
+        <li>Active aircraft</li>
+        <li>Active ground objects</li>
+        <li>Inactive aircraft (virtual waypoints, see below)</li>
+        <li>Inactive ground objects</li>
+        <li>Deleted or unspawned ground objects</li>
+      </ul>
+      <p>Everyone has different priorities when balancing performance against battlefield liveliness. We offer a wide range of configuration options to suit your needs.</p>
+    </section>
+
+    <section id="ground-spawn">
+      <h2>Ground object spawn settings</h2>
+      <h3 id="equipment-at-target">1. Equipment at target (%)</h3>
+      <p>How much of the ground equipment (tanks, vehicles, guns) at a target is shown in the mission. For example, if a tank battalion has 40 tanks and Equipment at target is set to 50%, 20 will spawn in the mission.</p>
+
+      <h3 id="aaa">2. AAA (%)</h3>
+      <p>How much of the anti-aircraft defense is shown in the mission. It is not affected by the En-route multiplier, the Far-away multiplier or the Air combat ground asset multiplier.</p>
+
+      <h3 id="infantry-at-target">3. Infantry at target (%)</h3>
+      <p>How many of the infantry at a target are shown in the mission.</p>
+
+      <h3 id="road-convoys">4. Road supply convoys (%)</h3>
+      <p>How many of the road supply convoys are shown in the mission.</p>
+
+      <h3 id="rail-movements">5. Rail supply movements (%)</h3>
+      <p>How many of the supply trains are shown in the mission.</p>
+
+      <h3 id="en-route-multiplier">6. En-route multiplier</h3>
+      <p>Scales down the ground objects placed near your route, compared with those at the target. A lower value means fewer objects along the way.</p>
+
+      <h3 id="far-away-multiplier">7. Far-away multiplier</h3>
+      <p>Scales down the ground objects placed far from your route, compared with those at the target. A lower value means fewer objects away from where you fly.</p>
+
+      <h3 id="en-route-distance">8. En-route distance (km)</h3>
+      <p>How close to your route an object must be to count as en-route rather than far-away.</p>
+
+      <h3 id="mission-coverage">9. Mission coverage (km)</h3>
+      <p>How far around your mission area ground objects are spawned.</p>
+
+      <h3 id="activation-margin">10. Activation margin (km)</h3>
+      <p>Ground units start to spawn when you come within this distance of them. Artillery can use a longer margin because its range is long, and there are few of them, so they rarely cause serious performance problems.</p>
+
+      <h3 id="deactivation-margin">11. Deactivation margin (km)</h3>
+      <p>Ground units are removed once you are farther than this distance from them, and it must be larger than the activation margin. Artillery can use a longer margin for the same reasons.</p>
+
+      <h3 id="air-combat-multiplier">12. Air combat ground asset multiplier</h3>
+      <p>Scales down the ground objects generated in intercept and air superiority patrol missions, so that ground objects do not slow down an air battle. For example, at 0.5, half of the usual ground objects are generated.</p>
+
+      <h3 id="max-ground-objects">13. Maximum ground objects</h3>
+      <p>The most ground objects allowed in the whole mission. If the mission has more, the extra objects are removed.</p>
+
+      <h3 id="local-ground-cap">14. Local ground object cap</h3>
+      <p>The most ground objects allowed to be active at the same time at any one spot, as if you were standing there. It prevents crowded spots, such as large battles, from slowing the game down.</p>
+
+      <h3 id="cap-order">Order and priority</h3>
+      <p>The local cap is applied before the maximum ground objects cap. Both remove objects in this order, until the limit is met:</p>
+      <ul>
+        <li>Infantry</li>
+        <li>Airfield service vehicles</li>
+        <li>Transport in battles</li>
+        <li>Other ground vehicles</li>
+        <li>Artillery</li>
+        <li>Trains</li>
+        <li>AAA</li>
+      </ul>
+      <p>Within each type, the objects farthest from your route go first, taking turns between the two sides. The local cap also never removes anything in your target hex.</p>
+    </section>
+
+    <section id="aircraft-spawn">
+      <h2>Aircraft spawn settings</h2>
+      <h3 id="vwp">1. Virtual waypoint (VWP)</h3>
+      <p>A virtual waypoint (VWP, introduced in PWCG) uses inactive aircraft to represent an AI flight that is not near you yet. VWPs are spaced out at a set distance along the flight's route, and each copy is activated only when you come close to it. The IL-2 engine treats these waiting copies as inactive aircraft, so they still affect performance greatly.</p>
+
+      <h3 id="vwp-spacing">2. Virtual waypoint spacing (km)</h3>
+      <p>The distance between VWPs along a flight's route. If you are already inside a VWP when it activates, the aircraft spawn at the previous VWP, so they never spawn on top of you.</p>
+
+      <h3 id="intercept-vwp-spacing">3. Intercept Virtual Waypoint spacing (km)</h3>
+      <p>The same as virtual waypoint spacing, but for AI flights intercepting your flight. It is smaller by default to keep interception flights more accurate.</p>
+
+      <h3 id="vwp-pruning">4. Virtual Waypoint Pruning Distance (km)</h3>
+      <p>VWPs away from your predicted route (time sensitive) are not generated. A smaller value gives better performance but fewer chances to meet aircraft if you leave your planned route.</p>
+
+      <h3 id="vwp-slack">5. Virtual Waypoint Time Slack (min)</h3>
+      <p>How much time inaccuracy is allowed when predicting where you will be along your route for the purpose of VWP pruning. A larger value keeps more VWPs, at some cost to performance.</p>
+
+      <h3 id="aircraft-activation">6. Aircraft activation distance (km)</h3>
+      <p>Aircraft spawn when you come within this distance of their VWP. It should be larger than the VWP spacing, otherwise you might pass between two VWPs without activating either.</p>
+
+      <h3 id="aircraft-deactivation">7. Aircraft deactivation distance (km)</h3>
+      <p>Active aircraft farther than this from you are deactivated. It should be larger than the activation distance.</p>
+    </section>
+
+    <section id="decrowding">
+      <h2>Aircraft De-crowding settings</h2>
+      <h3 id="decrowding-formula">1. Formula</h3>
+      <p>The AI gives each possible mission a score, and a crowding penalty is subtracted from it. Missions that score higher are preferred.</p>
+      <p class="equation" role="math" aria-label="Penalty equals C times the square of max of 0 and N minus A">Penalty = <i>C</i> &times; max(0, <i>N</i> &minus; <i>A</i>)<sup>2</sup></p>
+      <p>where <i>C</i> is the Crowding Coefficient, <i>N</i> is the number of your own side's aircraft within 25 km, and <i>A</i> is the Minimum Aircraft Number Before De-crowding. The penalty is counted over every place and time a flight passes through, and only for the extra crowding that flight adds.</p>
+      <p>Because the crowding is squared, each extra aircraft in a crowded spot costs more than the one before. Each faction only counts its own aircraft, so opposing flights can still meet in large battles. Flights of 4 aircraft or fewer pay no penalty, but still count toward <i>N</i> for others. A penalty can lower a flight's score to zero but never below, so useful missions are still flown. In testing, penalized flights are usually rescheduled or retasked to a different target, and only rarely entirely removed.</p>
+
+      <h3 id="crowding-coefficient">2. Crowding Coefficient</h3>
+      <p><i>C</i> multiplies the whole penalty: doubling <i>C</i> doubles the penalty on every flight. A higher <i>C</i> makes the AI more willing to change the time, route, target or package size of a flight to avoid crowding, and a value of 0 turns de-crowding off.</p>
+
+      <h3 id="minimum-aircraft">3. Minimum Aircraft Number Before De-crowding</h3>
+      <p><i>A</i> is how many aircraft within 25 km are allowed before the penalty starts. A lower value spreads flights out more aggressively, and a higher value tolerates bigger concentrations.</p>
+    </section>
+  </div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <p>IL-2 Dynamic Campaign is an unofficial community project. It is not affiliated with or endorsed by 1C Game Studios.</p>
+</footer>
+<script src="slides.js"></script>
+<script src="lightbox.js"></script>
+</body>
+</html>

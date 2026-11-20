@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gameplay Mechanisms | IL-2 Dynamic Campaign</title>
+<meta name="description" content="A dynamic campaign for IL-2 Great Battles">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="IL-2 Dynamic Campaign, home">
+    <img src="logo.png" alt="" width="46" height="46">
+    <span><span class="eyebrow">IL-2 GREAT BATTLES</span><span class="brand-title">Dynamic Campaign</span></span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="tutorial.html">Tutorial</a>
+    <a href="configuration.html">Configuration Guide</a>
+    <a href="gameplay.html" aria-current="page">Gameplay Mechanisms</a>
+    <a href="download.html">Download</a>
+    <a href="roadmap.html">Roadmap</a>
+  </nav>
+</header>
+<main class="page">
+<section>
+  <h1>Gameplay Mechanisms</h1>
+</section>
+
+<div class="doc">
+  <aside class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ul>
+      <li><a href="#overview">The strategic war overview</a></li>
+      <li class="sub"><a href="#clock">1. The campaign clock</a></li>
+      <li class="sub"><a href="#ai-planning">2. AI plans ground and flights</a></li>
+      <li class="sub"><a href="#simulation-interval">3. Simulation and your mission</a></li>
+      <li><a href="#supply">Supply</a></li>
+      <li class="sub"><a href="#fuel">1. Fuel</a></li>
+      <li class="sub"><a href="#ammo">2. Ammunition</a></li>
+      <li class="sub"><a href="#supply-network">3. Supply network</a></li>
+      <li><a href="#recon">Reconnaissance</a></li>
+      <li class="sub"><a href="#ai-recon">1. AI recon reports</a></li>
+      <li class="sub"><a href="#player-recon">2. Player recon reports</a></li>
+      <li class="sub"><a href="#recon-intel">3. Recon and the intelligence system</a></li>
+      <li class="sub"><a href="#recon-accuracy">4. Outdated and incorrect reports</a></li>
+      <li><a href="#ground-war">The ground war</a></li>
+      <li class="sub"><a href="#combat-model">1. Simple combat model</a></li>
+      <li class="sub"><a href="#zoc">2. Zone of control (ZOC)</a></li>
+      <li class="sub"><a href="#suppression">3. Suppression</a></li>
+      <li class="sub"><a href="#retreat-surrender">4. Forced retreat and surrender</a></li>
+      <li><a href="#rivers">Rivers and bridges</a></li>
+      <li class="sub"><a href="#river-crossing">1. Crossing rivers</a></li>
+      <li class="sub"><a href="#major-rivers">2. Major rivers</a></li>
+      <li class="sub"><a href="#river-ferry">3. River ferry</a></li>
+      <li><a href="#mission-types">All mission types</a></li>
+      <li class="sub"><a href="#mt-intercept">1. Intercept</a></li>
+      <li class="sub"><a href="#mt-patrol">2. Air superiority patrol</a></li>
+      <li class="sub"><a href="#mt-ground-attack">3. Ground attack</a></li>
+      <li class="sub"><a href="#mt-airfield-attack">4. Airfield attack</a></li>
+      <li class="sub"><a href="#mt-bridge-attack">5. Bridge attack</a></li>
+      <li class="sub"><a href="#mt-station-attack">6. Railway station attack</a></li>
+      <li class="sub"><a href="#mt-supply-attack">7. Supply attack</a></li>
+      <li class="sub"><a href="#mt-airlift">8. Airlift</a></li>
+      <li class="sub"><a href="#mt-escort">9. Escort</a></li>
+      <li class="sub"><a href="#mt-scramble">10. Scramble</a></li>
+      <li class="sub"><a href="#mt-ferry">11. Ferry flight</a></li>
+      <li class="sub"><a href="#mt-recon">12. Reconnaissance</a></li>
+    </ul>
+  </aside>
+
+  <div>
+    <section id="overview">
+      <h2>The strategic war overview</h2>
+      <h3 id="clock">1. The campaign clock</h3>
+      <p>Each day has four phases: Morning, Noon, Afternoon and Night. Both sides give their orders at the same time for the phase, and the orders then play out together.</p>
+
+      <h3 id="ai-planning">2. AI plans ground and flights</h3>
+      <p>At the start of each phase, the AI gives orders to every ground formation and every air squadron on both sides, including your own squadron, whose plan shows up as an operational order. You can leave it as it is or plan your own sortie instead.</p>
+
+      <h3 id="simulation-interval">3. Simulation and your mission</h3>
+      <p>Ground combat and flights that are not part of your mission are simulated in 5-minute intervals. When your flight is due, the game pauses at a 5-minute interval, and the mission is generated, with all the relevant objects from the war around you. After you finish flying and accept the report, the actual outcome goes back to the strategic layer, and the war continues from there.</p>
+    </section>
+
+    <section id="supply">
+      <h2>Supply</h2>
+      <h3 id="fuel">1. Fuel</h3>
+      <p>Aircraft burn fuel in flight. The more you fly, the more fuel your airfield uses. On the ground, tanks, motorized infantry, artillery and rocket artillery need fuel to move. Without it, they cannot advance or retreat.</p>
+
+      <h3 id="ammo">2. Ammunition</h3>
+      <p>Aircraft use ammunition in their payload, and heavier weapons cost more. Ground units use ammunition to attack and counterattack, and the heavier the weapon, the more it uses: rocket artillery uses the most, then artillery, then tanks. Without ammunition, ground units cannot attack or counterattack. Artillery cannot bombard.</p>
+
+      <h3 id="supply-network">3. Supply network</h3>
+      <p>Fuel and ammunition travel from supply sources on the edge of the map to the front by truck, train, airlift and, on major rivers, ferry. Trucks go almost anywhere, but carry little, and rough ground such as mountains and forests cuts how much they can move. Trains carry far more, but need tracks, and stations or rail yards to load and unload. Supply cannot cross a river unless the river has a bridge.</p>
+    </section>
+
+    <section id="recon">
+      <h2>Reconnaissance</h2>
+      <h3 id="ai-recon">1. AI recon reports</h3>
+      <p>AI squadrons generate recon reports near where they fly. The quality of the report depends on the pilots' experience, the time of day and the weather. If the recon flight is shot down before it reports, the faction learns nothing.</p>
+
+      <h3 id="player-recon">2. Player recon reports</h3>
+      <p>After you finish a mission, you can report what you saw while reviewing your mission report. You mark each hex on the map with the type of enemy force and its apparent strength, or mark it empty to indicate the area is observed, but the enemy is apparently absent. You can also report parked aircraft at enemy airfields.</p>
+
+      <h3 id="recon-intel">3. Recon and the intelligence system</h3>
+      <p>Every recon report, from the AI or from you, goes into your faction's intelligence. New reports are combined with older ones on the same hex, so repeated recon builds a more reliable picture. Older reports decay in confidence over time. The map shows each contact with a confidence level, and a strength range that narrows as confidence rises.</p>
+
+      <h3 id="recon-accuracy">4. Outdated and incorrect reports</h3>
+      <p>Reports can contain error. A contact loses confidence as time passes if no new observation is made, and is dropped after a few phases. A report can also be wrong, either because enemy forces move, or a small share of incorrect observations. Recon on an enemy airfield might also miss enemy planes already in flight.</p>
+    </section>
+
+    <section id="ground-war">
+      <h2>The ground war</h2>
+      <h3 id="combat-model">1. Simple combat model</h3>
+      <p>If a ground formation is given an order that moves it into range of an enemy formation, they fight in 5-minute steps. Each side fires with its infantry, anti-tank guns, half-tracks, tanks, artillery, rocket artillery and AA. How much damage it does depends on the weapon, the troops' experience, terrain and entrenchment, and whether the shooters are suppressed. Firing uses up ammunition, and losses reduce the formation's strength.</p>
+
+      <h3 id="zoc">2. Zone of control (ZOC)</h3>
+      <p>Every formation exerts a ZOC over the hexes next to it. An enemy formation cannot slide along the front from one hex in your ZOC to another. A retreating formation cannot withdraw into the ZOC of an enemy. Supply cannot pass through enemy ZOC. Friendly presence in an area cancels enemy ZOC.</p>
+
+      <h3 id="suppression">3. Suppression</h3>
+      <p>Fire does not only kill, it also suppresses. Suppression reduces the combat effectiveness of the unit. A formation recovers from suppression when it isn't under fire, faster if it is experienced, and slower if the enemy is still next to it. You can help your side by suppressing an enemy formation before the ground attack, for example with an air strike on it. In an air strike, every hit will deal suppression, even if the hit does not deal damage or does not destroy an enemy.</p>
+
+      <h3 id="retreat-surrender">4. Forced retreat and surrender</h3>
+      <p>When suppression on a fighting formation passes a threshold, it is forced to retreat to an adjacent hex that it can reach, using up its movement from the next phase. A formation that has nowhere to go surrenders, and its remaining troops and equipment are captured.</p>
+    </section>
+
+    <section id="rivers">
+      <h2>Rivers and bridges</h2>
+      <h3 id="river-crossing">1. Crossing rivers</h3>
+      <p>Tank and artillery formations can only enter a river hex that has an intact bridge. Infantry and motorized infantry can ford minor rivers without a bridge, but crossing slows them down. Supply trucks cannot ford a river without a bridge.</p>
+
+      <h3 id="major-rivers">2. Major rivers</h3>
+      <p>No formation can enter a major river hex without an intact bridge. This holds for infantry too, so a destroyed bridge on a major river cuts the line for everyone.</p>
+
+      <h3 id="river-ferry">3. River ferry</h3>
+      <p>Supply can cross a major river by ferry, between cities on the same river.</p>
+    </section>
+
+    <section id="mission-types">
+      <h2>All mission types</h2>
+      <h3 id="mt-intercept">1. Intercept</h3>
+      <p>Your flight plan indicates readiness. If an enemy flight of matching type is detected by a friendly ground formation or AI flight, an interception mission will be offered in the mid-turn pause. You take off to meet an enemy flight and attack it. Note that the enemy might turn or reach their target before the interception point, so search around if you cannot find your target. Observation might also contain errors for the enemy's speed, heading, type and number.</p>
+
+      <h3 id="mt-patrol">2. Air superiority patrol</h3>
+      <p>You patrol over a chosen area for a set time and attack enemy aircraft that come in. The AI often schedules these defensively as combat air patrol missions, or offensively before a friendly strike package arrives, as a fighter sweep mission. The mission does not spawn enemy units. Contact depends on an enemy flight passing through the area.</p>
+
+      <h3 id="mt-ground-attack">3. Ground attack</h3>
+      <p>You attack an enemy ground formation you select. You may destroy their infantry, equipment, tents, HQ, ammunition or fuel, and every hit also builds suppression.</p>
+      <h3 id="mt-airfield-attack">4. Airfield attack</h3>
+      <p>You attack an enemy airfield, targeting their parked aircraft, fuel and ammunition. If the enemy has planned standby fighters, they will take off to defend their airfield.</p>
+
+      <h3 id="mt-bridge-attack">5. Bridge attack</h3>
+      <p>You attack an enemy bridge. A destroyed bridge stays destroyed until engineers repair it, which takes engineering supplies and several phases. Certain major bridges can take a long time to destroy, potentially months, effectively cutting the bridge for the entirety of the campaign.</p>
+
+      <h3 id="mt-station-attack">6. Railway station attack</h3>
+      <p>You attack a railway station to reduce its integrity. A damaged station cannot load or unload supply, and a severely damaged one cannot allow traffic to pass through. Repairing takes engineering supplies and several phases.</p>
+      <h3 id="mt-supply-attack">7. Supply attack</h3>
+      <p>You attack enemy supply convoys and trains near your target. A shipment that is destroyed will not reach its target.</p>
+
+      <h3 id="mt-airlift">8. Airlift</h3>
+      <p>Transport aircraft carry fuel and ammunition from one airfield to another, to supply places that trucks and trains cannot reach. The cargo arrives only if the aircraft land safely at the target airfield. This mission is unavailable to the player at the moment.</p>
+
+      <h3 id="mt-escort">9. Escort</h3>
+      <p>You accept a friendly flight's offer of escort. You fly to its airfield to rendezvous with them, fly with them on their mission, and escort them back as they land. You can also request an escort from AI flights.</p>
+      <h3 id="mt-scramble">10. Scramble</h3>
+      <p>Fighters on standby at your airfield take off immediately when an enemy flight approaches. A scramble is not planned in advance, and is offered in the mid-turn pause, similar to intercept. Standby fighters are reserved for airfield defense, so they are not available for your other missions in the same phase.</p>
+
+      <h3 id="mt-ferry">11. Ferry flight</h3>
+      <p>The whole squadron moves its aircraft and crews to another airfield. The fuel and ammunition already stored at the old airfield stay behind, so expect a few phases of delay while supply comes in before operations can restart.</p>
+
+      <h3 id="mt-recon">12. Reconnaissance</h3>
+      <p>You fly over a chosen area to observe it. After the mission, you report what you saw, and the intelligence you gather helps you and your faction plan later missions.</p>
+    </section>
+  </div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <p>IL-2 Dynamic Campaign is an unofficial community project. It is not affiliated with or endorsed by 1C Game Studios.</p>
+</footer>
+<script src="slides.js"></script>
+<script src="lightbox.js"></script>
+</body>
+</html>

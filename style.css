@@ -137,6 +137,8 @@ body.lightbox-open { overflow: hidden; }
 code, kbd { background: #10161c; border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-family: Consolas, ui-monospace, monospace; font-size: .92em; color: var(--text); }
 pre { margin: 12px 0 0; background: #10161c; border: 1px solid var(--line); border-radius: 6px; padding: 12px 16px; overflow-x: auto; }
 pre code { background: none; border: 0; padding: 0; }
+.equation { margin: 16px 0; text-align: center; font-family: "Cambria Math", Cambria, "Times New Roman", serif; font-size: 19px; color: var(--text); overflow-x: auto; }
+.equation i { color: var(--gold); }
 
 /* Download */
 .release { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
