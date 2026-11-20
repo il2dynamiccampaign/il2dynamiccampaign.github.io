@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "latest": {
-    "version": "0.1.1-beta.2",
-    "date": "2026-11-18",
+    "version": "0.1.1-beta.3",
+    "date": "2026-11-20",
     "downloads": [
-      { "label": "Download ZIP", "url": "https://github.com/il2dynamiccampaign/il2dynamiccampaign.github.io/releases/download/v0.1.1-beta.2/I2DC-0.1.1-beta.2.zip" }
+      { "label": "Download ZIP", "url": "https://github.com/il2dynamiccampaign/il2dynamiccampaign.github.io/releases/download/v0.1.1-beta.3/I2DC-0.1.1-beta.3.zip" }
     ]
   }
 }
